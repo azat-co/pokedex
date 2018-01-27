@@ -6,9 +6,10 @@ import ListPage from './views/ListPage'
 import { Router, Route, browserHistory, applyRouterMiddleware } from 'react-router'
 import useRelay from 'react-router-relay'
 import './index.css'
+import {graphql} from '../package.json'
 
 Relay.injectNetworkLayer(
-  new Relay.DefaultNetworkLayer('https://api.graph.cool/relay/v1/__PROJECT_ID__')
+  new Relay.DefaultNetworkLayer(graphql.request.url)
 )
 
 const ViewerQueries = { viewer: () => Relay.QL`query { viewer }` }
