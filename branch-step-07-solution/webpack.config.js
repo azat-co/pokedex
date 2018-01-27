@@ -23,7 +23,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
       }, {
         test: /\.svg$/,
         loader: 'file'
-      }]
+      }, {
+        test: /\.json$/,
+        loader: 'json'
+      }
+    ]
     },
     plugins: [
       new HtmlWebpackPlugin({
